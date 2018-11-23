@@ -1,0 +1,114 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "fact rail",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PnrStatusIntent",
+                    "slots": [
+                        {
+                            "name": "pnrNumber",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "What is my pnr status",
+                        "Can you help on pnr status",
+                        "My pnr status"
+                    ]
+                },
+                {
+                    "name": "TrainStatusIntent",
+                    "slots": [
+                        {
+                            "name": "trainNumber",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "Where is my train",
+                        "Can you help to locate my train",
+                        "What is my train status"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "PnrStatusIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.1427040838400"
+                    },
+                    "slots": [
+                        {
+                            "name": "pnrNumber",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "TrainStatusIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.509391374760"
+                    },
+                    "slots": [
+                        {
+                            "name": "trainNumber",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Confirm.Intent.1427040838400",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell your ten digit pnr number"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.509391374760",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the five digit train number"
+                    }
+                ]
+            }
+        ]
+    }
+}
